@@ -188,17 +188,24 @@
 </head>
 
 <body>
-    <h1> Bhanupratap Saheb Is Wel Come Rohana Kuti </h1>
-
+    <h1 style="font-family: 'Playfair Display', serif; 
+    font-size: 2.5em; 
+    color: #2c3e50; 
+    border-bottom: 2px solid #e74c3c; 
+    padding-bottom: 10px; 
+    letter-spacing: 1px; 
+    text-transform: uppercase;">
+        Bhanupratap Saheb was warmly welcomed at Kabir Kuti <br> Rohana
+    </h1>
     <div class="gallery" id="gallery">
-     
+
         <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/1.png" alt=""></div>
         </div>
         <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/2.png" alt=""></div>
         </div>
-         <div class="gallery-item">
+        <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/3.png" alt=""></div>
         </div>
         <div class="gallery-item">
@@ -242,10 +249,10 @@
         </div>
         <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/16.png" alt=""></div>
-        </div> 
+        </div>
 
 
-         <div class="gallery-item">
+        <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/17.png" alt=""></div>
         </div>
 
@@ -278,9 +285,9 @@
         </div>
         <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/26.png" alt=""></div>
-        </div> 
+        </div>
 
- 
+
         <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/27.png" alt=""></div>
         </div>
@@ -314,9 +321,9 @@
         </div>
         <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/37.png" alt=""></div>
-        </div> 
+        </div>
 
- 
+
         <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/38.png" alt=""></div>
         </div>
@@ -350,12 +357,12 @@
         </div>
         <div class="gallery-item">
             <div class="content"><img src="./restinventkuti_imgg/48.png" alt=""></div>
-        </div> 
+        </div>
 
 
-      
 
-   
+
+
 
 
 
@@ -364,42 +371,42 @@
 
 
     </div>
-    
-<script>
-    var gallery = document.querySelector('#gallery');
-    var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
-    var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
-    var resizeAll = function () {
-        var altura = getVal(gallery, 'grid-auto-rows');
-        var gap = getVal(gallery, 'grid-row-gap');
-        gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-            var el = item;
-            el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
-        });
-    };
-    gallery.querySelectorAll('img').forEach(function (item) {
-        item.classList.add('byebye');
-        if (item.complete) {
-            console.log(item.src);
-        }
-        else {
-            item.addEventListener('load', function () {
-                var altura = getVal(gallery, 'grid-auto-rows');
-                var gap = getVal(gallery, 'grid-row-gap');
-                var gitem = item.parentElement.parentElement;
-                gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-                item.classList.remove('byebye');
-            });
-        }
-    });
-    window.addEventListener('resize', resizeAll);
-    gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-        item.addEventListener('click', function () {
-            item.classList.toggle('full');
-        });
-    });
 
-</script>
+    <script>
+        var gallery = document.querySelector('#gallery');
+        var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
+        var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
+        var resizeAll = function () {
+            var altura = getVal(gallery, 'grid-auto-rows');
+            var gap = getVal(gallery, 'grid-row-gap');
+            gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+                var el = item;
+                el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+            });
+        };
+        gallery.querySelectorAll('img').forEach(function (item) {
+            item.classList.add('byebye');
+            if (item.complete) {
+                console.log(item.src);
+            }
+            else {
+                item.addEventListener('load', function () {
+                    var altura = getVal(gallery, 'grid-auto-rows');
+                    var gap = getVal(gallery, 'grid-row-gap');
+                    var gitem = item.parentElement.parentElement;
+                    gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+                    item.classList.remove('byebye');
+                });
+            }
+        });
+        window.addEventListener('resize', resizeAll);
+        gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                item.classList.toggle('full');
+            });
+        });
+
+    </script>
 
 </body>
 
