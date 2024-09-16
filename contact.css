@@ -1,0 +1,133 @@
+:root {
+    --text-color: #ffffff;
+    --card-bg: #5f4343;
+    --input-bg: #00000039;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: black;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact {
+    padding: 100px 0;
+}
+
+.main-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.main-text h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.main-text p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.contact-card {
+    flex-basis: 30%;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+}
+
+.card-front {
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.contact-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.contact-card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.contact-card i {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-card {
+        margin-bottom: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo, .footer-links, .footer-social {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-form h3 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
