@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Kabir Kuti Rohana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+            justify-content: center;
+        }
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .image-section:hover {
+            transform: translateY(-5px);
+        }
+        .image-section img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        .button-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .see-more-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #363d36;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+        .see-more-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Members Kabir Kuti Rohana</h1>
+    <div class="container">
+        <div class="image-section">
+            <img src="./members/mandal.png" alt="Mandal">
+            <div class="button-container">
+                <a href="./mandal.html" class="see-more-btn">See More</a>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="./members/mahila mandal.png" alt="Mahila Mandal">
+            <div class="button-container">
+                <a href="./mahilamandal.html" class="see-more-btn">See More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
