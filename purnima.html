@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Image to Play Video</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #333;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      padding: 10px;
+    }
+
+    .media-item {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .media-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .thumbnail {
+      cursor: pointer;
+      width: 100%;
+      display: block;
+      height: 500px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-container {
+      display: none;
+      width: 100%;
+      position: relative;
+      height: 750px;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+    img{
+        height: 600px;
+    }
+
+    .caption {
+        padding: 15px;
+        font-size: 1rem;
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+        color: #fff;
+        text-align: center;
+        font-weight: 500;
+        border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+    
+      .caption:hover {
+        background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+        transform: translateY(-5px); /* Slight lift on hover */
+      }
+    /* Play Button Overlay */
+    .media-item .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      color: rgba(255, 255, 255, 0.8);
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    .media-item:hover .play-icon {
+      display: block;
+    }
+
+    /* Media Query for mobile responsiveness */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .media-item {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>पूर्णिमा कार्यक्रम</h1>
+
+  <div class="gallery">
+    <!-- Video 1 -->
+    <div class="media-item">
+      <img src="./purnima host/19 aug 2024.jpg" alt="Video 1" class="thumbnail" id="playButton1" h>
+      <div class="video-container" id="videoContainer1">
+        <video id="videoPlayer1" controls>
+          <source src="./purnimaprogramvideo/shravan purnima .mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="caption">श्री रविद्र पाटिल और अनुप महंत के उपस्थिति में बड़े हर्षोल्लास के साथ मनाया गया। <br> Shravan Purnima ,19 aug 2024 </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="media-item">
+      <img src="./purnima host/17 sep 2024.jpg" alt="Video 2" class="thumbnail" id="playButton2">
+      <div class="video-container" id="videoContainer2">
+        <video id="videoPlayer2" controls>
+          <source src="./purnimaprogramvideo/shraddha purnima.mp4" type="video/mp4">
+
+        </video>
+      </div>
+      <div class="caption"> श्री हिरादास साहेब और रविद्र महंत के उपस्थिति में बड़े हर्षोल्लास के साथ मनाया गया। <br>Bhadrapada Purnima,17 sep 2024
+
+
+    </div>
+    </div>
+
+
+  
+
+ 
+
+  <script>
+    // Define the function to handle click and play video
+    function setupVideoPlay(imageId, videoContainerId, videoPlayerId) {
+      const playButton = document.getElementById(imageId);
+      const videoContainer = document.getElementById(videoContainerId);
+      const videoPlayer = document.getElementById(videoPlayerId);
+
+      playButton.addEventListener('click', function() {
+        // Hide the image thumbnail and show the video container
+        playButton.style.display = 'none';
+        videoContainer.style.display = 'block';
+
+        // Play the video
+        videoPlayer.play();
+      });
+    }
+
+    // Setup for each video and image
+    setupVideoPlay('playButton1', 'videoContainer1', 'videoPlayer1');
+    setupVideoPlay('playButton2', 'videoContainer2', 'videoPlayer2');
+    setupVideoPlay('playButton3', 'videoContainer3', 'videoPlayer3');
+    setupVideoPlay('playButton4', 'videoContainer4', 'videoPlayer4');
+  </script>
+
+</body>
+</html>

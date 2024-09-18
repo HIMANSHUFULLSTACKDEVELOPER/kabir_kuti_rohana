@@ -211,6 +211,33 @@
     </div>
   </header>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const languageToggleButton = document.getElementById('language-toggle');
+      const languageText = document.getElementById('language-text');
+
+      let isHindi = false; // Start with English
+
+      function updateLanguage() {
+        if (isHindi) {
+          languageText.textContent = 'हिन्दी';
+          document.querySelectorAll('.navbar-link .span').forEach(el => {
+            el.textContent = el.getAttribute('data-english');
+          });
+        } else {
+          languageText.textContent = 'English';
+          document.querySelectorAll('.navbar-link .span').forEach(el => {
+            el.textContent = el.getAttribute('data-hindi');
+          });
+        }
+        isHindi = !isHindi; // Toggle language
+      }
+
+      languageToggleButton.addEventListener('click', updateLanguage);
+
+      updateLanguage();
+    });
+  </script>
 
 
 
@@ -1156,7 +1183,7 @@
 
             <p class="section-subtitle label-2 text-center">Recent Updates</p>
 
-            <h2 class="section-title headline-1 text-center">Upcoming Event</h2> 
+            <h2 class="section-title headline-1 text-center">Purnima</h2> 
 
             <ul class="grid-list">
 
@@ -1227,7 +1254,7 @@
 
             </ul>
 
-            <a href="#" class="btn btn-primary">
+            <a href="./upcoming event.html" class="btn btn-primary">
                 <span class="text text-1">learn more</span>
 
                 <span class="text text-2" aria-hidden="true"> learn more </span>
@@ -1285,7 +1312,94 @@
 
     </article>
   </main>
+ <!-- 
+        - #EVENT
+      -->
+      <section class="section event bg-black-10" aria-label="event">
+        <div class="container">
 
+            <p class="section-subtitle label-2 text-center">Recent Updates</p>
+
+            <h2 class="section-title headline-1 text-center">Purnima Program</h2> 
+
+            <ul class="grid-list">
+
+                <li>
+                    <div class="event-card has-before hover:shine">
+
+                        <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+                            <img src="./purnima host/19 aug 2024.jpg"
+                                width="350" height="450" loading="lazy"
+                                alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+
+                            <time class="publish-date label-2" datetime="2022-09-15">19/08/2024</time>
+                        </div>
+
+                        <div class="card-content">
+                            <p class="card-subtitle label-2 text-center">Bhadrapada Purnima,</p>
+
+                            <h3 class="card-title title-2 text-center">
+                                Bhadrapada Purnima,
+                            </h3>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="event-card has-before hover:shine">
+
+                        <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+                            <img src="./purnima host/17 sep 2024.jpg"
+                                width="350" height="450" loading="lazy"
+                                alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+
+                            <time class="publish-date label-2" datetime="2022-09-08">17/09/2024</time>
+                        </div>
+
+                        <div class="card-content">
+                          <p class="card-subtitle label-2 text-center">Bhadrapada Purnima,</p>
+
+                          <h3 class="card-title title-2 text-center">
+                              Bhadrapada Purnima,
+                          </h3>
+                           
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="event-card has-before hover:shine">
+
+                        <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+                            <img src="https://www.prabhatkhabar.com/wp-content/uploads/2024/02/maagh-purnima-2022.jpg"
+                                width="350" height="450" loading="lazy"
+                                alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+
+                            <time class="publish-date label-2" datetime="2022-09-03">17/10/2024</time>
+                        </div>
+
+                        <div class="card-content">
+                          <p class="card-subtitle label-2 text-center"> Ashwin Purnima</p>
+
+                          <h3 class="card-title title-2 text-center"> Ashwin Purnima
+                          </h3>
+                        </div>
+
+                    </div>
+                </li>
+
+            </ul>
+
+            <a href="./purnima.html" class="btn btn-primary">
+                <span class="text text-1">learn more</span>
+
+                <span class="text text-2" aria-hidden="true"> learn more </span>
+            </a>
+
+        </div>
+    </section>
 
 <!-- contact -->
 <section id="contact" class="contact">
