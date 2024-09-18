@@ -2,8 +2,10 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    margin-left: 333px;
+    justify-content: center; /* Center the items horizontally */
+    margin: 0 auto; /* Center the container itself */
 }
+
 .video-player {
     width: 400px;
     border: 1px solid #ccc;
@@ -11,16 +13,19 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .video-player video {
     width: 100%;
     display: block;
 }
+
 .controls {
     background-color: #333;
     padding: 10px;
     display: flex;
     justify-content: center;
 }
+
 .controls button {
     background-color: #4CAF50;
     border: none;
@@ -47,7 +52,7 @@
 @media (max-width: 480px) {
     .video-container {
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Center items vertically for mobile */
     }
     .video-player {
         width: 100%;
